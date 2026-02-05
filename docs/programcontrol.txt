@@ -1,0 +1,8 @@
+Testing:
+
+- Each member will write comprehensive tests for their methods using Mockito
+- Integration tests will be written for:
+    - user interface and the program controller (part c)
+    - program controller (part c) and file system
+    - file system and ciphering/deciphering
+
