@@ -18,8 +18,5 @@ Team self-assessment. What will work better next time? Take notes.
 
 System Design:
 
-
-
-
-Test:
+All code is run from the TopSecret class, which is the main entry point for the program.
 
