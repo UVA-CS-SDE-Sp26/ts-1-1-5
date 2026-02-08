@@ -9,7 +9,7 @@ abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
 bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890a
 
 Pseudocode:
-Key = read key.txt file in ciphers folder
+key = read key.txt file in ciphers folder
 cipherMap = Create a Dictionary/Map where {cipheredLine[i]: decipheredLine[i]}
 decipheredText = ""
 for character in cipheredText:
