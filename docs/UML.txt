@@ -25,8 +25,12 @@ cipher
 - cipherMap: Hash map
 - decipheredText: String
 ---------------
-+ decipherCharacter(char character)
++ mapCipherKey()
++ decipherCharacter(char cipheredChar):Char
 
+Explanation (mapCipherKey):
+    - Void function to match ciphered and original characters in the hashmap
+    - no return
 Explanation (decipherCharacter):
     - Using the hashmap to decipher the inputted character
 Return:
