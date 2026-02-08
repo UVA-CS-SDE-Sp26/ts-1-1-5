@@ -1,3 +1,5 @@
+import java.io.File;
+
 public class ProgramControl {
     private String encryptionKey;
 
@@ -8,7 +10,7 @@ public class ProgramControl {
     public ProgramControl(String encryptionKey){
         this.encryptionKey = encryptionKey;
     }
-    public String getAvailableFiles(){return "";}
+    public File[] getAvailableFiles(){return null;}
     public String getFileContents(int fileID){return "";}
     public String getFileContents(int fileID, String decryptionKey){return "";}
 
