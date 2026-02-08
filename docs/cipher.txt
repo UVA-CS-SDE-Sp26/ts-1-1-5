@@ -1,0 +1,31 @@
+Description:
+You are responsible for implementing the ciphering feature. This feature should accept a ciphered string and return it deciphered.
+The cipher will be stored in a file named key.txt, stored in a folder, ciphers, (in the same directory of the program, or in the
+root of your project folder.) This file will contain two lines, the first line is the actual letter, the second line is the cipher match.
+When the cipher is accessed, it must be validated. An example will be provided. Document this in cipher.txt.
+
+key.txt format:
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890
+bcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890a
+
+Pseudocode:
+Key = read key.txt file in ciphers folder
+cipherMap = Create a Dictionary/Map where {cipheredLine[i]: decipheredLine[i]}
+decipheredText = ""
+for character in cipheredText:
+    if character exists in Map:
+        decipheredText += cipherMap[character]
+    ELSE:
+        decipheredText += character
+return decipheredText
+
+Test:
+Test for one character:
+    given "g" expected output is "f"
+Test for multiple characters:
+    given "bcd" as input, expected output is "abc"
+Test for numbers:
+    given "a123" as input, expected output is "0z12"
+Test with space and full stop:
+    given "Uif eph.", expected output is "The dog."
+
