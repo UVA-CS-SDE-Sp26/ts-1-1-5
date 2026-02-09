@@ -18,3 +18,20 @@ Returns:
     - A string containing the contents of the specified file.
 Parameters:
   - fileID: An integer representing the ID of the file to be accessed.
+
+cipher
+--------------
+- key: String
+- cipherMap: Hash map
+- decipheredText: String
+---------------
++ mapCipherKey()
++ decipherCharacter(char cipheredChar):Char
+
+Explanation (mapCipherKey):
+    - Void function to match ciphered and original characters in the hashmap
+    - no return
+Explanation (decipherCharacter):
+    - Using the hashmap to decipher the inputted character
+Return:
+    - deciphered character
