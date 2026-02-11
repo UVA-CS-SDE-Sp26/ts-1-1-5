@@ -10,9 +10,9 @@ public class FileHandlerTest {
 
 
     @Test
-    public void getAvailableFilesReturnsTextFiles() {
+    public void returnAvailableFilesReturnsTextFiles() {
         FileHandler handler = new FileHandler();
-        File[] files = handler.getAvailableFiles();
+        File[] files = handler.returnAvailableFiles();
 
         ArrayList<String> fileNames = new ArrayList<>(Arrays.stream(files).map(File::getName).toList());
 

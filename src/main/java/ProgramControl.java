@@ -10,7 +10,7 @@ public class ProgramControl {
     public ProgramControl(String encryptionKey){
         this.encryptionKey = encryptionKey;
     }
-    public File[] getAvailableFiles(){return null;}
+    public String getAvailableFiles(){return null;}
     public String getFileContents(int fileID){return "";}
     public String getFileContents(int fileID, String decryptionKey){return "";}
 
