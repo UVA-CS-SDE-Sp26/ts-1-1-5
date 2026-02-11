@@ -23,4 +23,13 @@ public class FileHandler{
         }
         return fileNames;
     }
+
+    public String returnFileContents(int fileID){
+
+        File[] folders = returnAvailableFiles();
+        File fileRequested = folders[fileID];
+        //decrypt step, need method name
+        return " ";
+
+    }
 }

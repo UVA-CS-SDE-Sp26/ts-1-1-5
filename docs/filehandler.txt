@@ -18,6 +18,7 @@ FileHandler
 -------------------------------
 -returnAvailableFiles() : File[]
 +returnAvailableFileNames() : String
++returnFileContents(int fileID) : String
 -------------------------------
 
 
