@@ -7,9 +7,9 @@ ProgramControl
 
 
 Explanation: getAvailableFiles()
-- This method will return a string listing all files that the user can access. This will be run when no arguments are provided by the user. The method will ask the file handler for an ArrayList of files, and format them into a numbered list before returning the string.
+- This method will return a list of all files that the user can access. This will be run when no arguments are provided by the user. The method will ask the file handler for an array of files.
 Returns:
-    - A string listing all available files.
+    - A list with all available files.
 
 Explanation: getFileContents(int fileID)
 - This method will return the contents of a specified file. It takes an integer fileID as input, which corresponds to the file the user wants to access. The method will request the file from the file handler, decipher it using the ciphering/deciphering module, and return the deciphered contents as a string.

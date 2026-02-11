@@ -12,3 +12,8 @@ Team Member C:
 Team Member D:
     -Handles deciphering for request files
 
+Testing:
+
+test if no args returns list of files
+test if requested file is returned
+test if requested file is returned decrypted
