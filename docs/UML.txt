@@ -2,14 +2,14 @@ ProgramControl
 ---------------
 - decryptionKey: String
 ---------------
-+ String getAvailableFiles()
-+ String getFileContents(int fileID)
++ getAvailableFiles(): String
++ getFileContents(int fileID): String
 
 
 Explanation: getAvailableFiles()
-- This method will return a list of all files that the user can access. This will be run when no arguments are provided by the user. The method will ask the file handler for an array of files.
+- This method will return String listing the files that the user can access. This will be run by the UserInterface object when no arguments are provided by the user. The method will ask the file handler for an array of files, convert the list into a string, then pass the string back to the user interface.
 Returns:
-    - A list with all available files.
+    - A String listing all available files.
 
 Explanation: getFileContents(int fileID)
 - This method will return the contents of a specified file. It takes an integer fileID as input, which corresponds to the file the user wants to access. The method will request the file from the file handler, decipher it using the ciphering/deciphering module, and return the deciphered contents as a string.
