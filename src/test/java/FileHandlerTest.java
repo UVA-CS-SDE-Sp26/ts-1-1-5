@@ -12,9 +12,9 @@ public class FileHandlerTest {
     @Test
     public void returnAvailableFilesReturnsTextFiles() {
         FileHandler handler = new FileHandler();
-        File[] files = handler.returnAvailableFiles();
+        String files = handler.returnAvailableFileNames();
 
-        ArrayList<String> fileNames = new ArrayList<>(Arrays.stream(files).map(File::getName).toList());
+        ArrayList<String> fileNames = new ArrayList<>(Arrays.stream(files.split("\n")).toList());
 
         assertEquals(2, fileNames.size());
         assertTrue(fileNames.contains("carnivore.txt"));

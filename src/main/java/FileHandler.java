@@ -5,7 +5,7 @@ import java.nio.file.Path;
 
 public class FileHandler{
 
-    public File[] returnAvailableFiles(){
+    private File[] returnAvailableFiles(){
         File folder = new File("data");
 
         //use .getName() when iterating for names
@@ -13,15 +13,14 @@ public class FileHandler{
 
         return textFiles;
     }
-    public String getFileContents(int fileID) throws IOException {
-        //File[] folder = getAvailableFiles();
-        String file = getFileContents(fileID, Files.readString(Path.of("cipher/key.txt")));
 
-        if(file != null){
-            return file;
+    public String returnAvailableFileNames(){
+        File[] folders = returnAvailableFiles();
+
+        String fileNames = "";
+        for(int i =0; i<folders.length; i++){
+            fileNames+= folders[i].getName() + "\n";
         }
-        return "Invalid File ID!";
-
-       }
-    public String getFileContents(int fileID, String decryptionKey){return "";}
+        return fileNames;
+    }
 }

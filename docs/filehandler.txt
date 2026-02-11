@@ -12,6 +12,15 @@ Team Member C:
 Team Member D:
     -Handles deciphering for request files
 
+UML:
+
+FileHandler
+-------------------------------
+-returnAvailableFiles() : File[]
++returnAvailableFileNames() : String
+-------------------------------
+
+
 Testing:
 
 test if no args returns list of files
