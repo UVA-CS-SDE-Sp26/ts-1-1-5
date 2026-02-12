@@ -16,14 +16,17 @@ UML:
 
 FileHandler
 -------------------------------
--returnAvailableFiles() : File[]
++returnAvailableFiles() : File[]
 +returnAvailableFileNames() : String
-+returnFileContents(int fileID) : String
++returnFileContents(int fileID, Cipher cipherHandler) : String
 -------------------------------
 
+returnAvailableFiles() is used to make the program compatible with fileID which is the index of the requested file
+returnAvailableFileNames() returns the .cip file names
+returnFileContents() returns the deciphered text
 
 Testing:
 
-test if no args returns list of files
-test if requested file is returned
+test if correct files are returned
+test if invalid fileID returns error
 test if requested file is returned decrypted
