@@ -5,7 +5,7 @@ import java.nio.file.Path;
 
 public class FileHandler{
 
-    private File[] returnAvailableFiles(){
+    public File[] returnAvailableFiles(){
         File folder = new File("data");
 
         //use .getName() when iterating for names
@@ -27,6 +27,9 @@ public class FileHandler{
     public String returnFileContents(int fileID){
 
         File[] folders = returnAvailableFiles();
+        if(fileID >= folders.length){
+            return "Invalid fileID";
+        }
         File fileRequested = folders[fileID];
         //decrypt step, need method name
         return " ";

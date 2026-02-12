@@ -2,7 +2,7 @@ Plan for the design of the software that handles direct access to files
 
 Team Memer B:
     -Receives request from C
-    -Returns file or file list depending on request type
+    -Returns file content or file list depending on request type
 
 Team Member C:
     -Connects command line to file handler
@@ -10,7 +10,7 @@ Team Member C:
     -Handles deciphered text file from Member B and forwards it to Member A
 
 Team Member D:
-    -Handles deciphering for request files
+    -Handles deciphering for requested files
 
 UML:
 
