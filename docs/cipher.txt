@@ -25,7 +25,7 @@ Test for one character:
 Test for multiple characters:
     given "bcd" as input, expected output is "abc"
 Test for numbers:
-    given "a123" as input, expected output is "0z12"
+    given "a123" as input, expected output is "0Z12"
 Test with space and full stop:
     given "Uif eph.", expected output is "The dog."
 
