@@ -47,7 +47,7 @@ public class ProgramControl {
     //helper method
     public String getFileContents(int fileID, String decryptionKeyFilePath){
         //subtract 1 from fileID because FileHandler treats it as an array index
-        return getFileContents(fileID, cipherHandler, fileHandler, decryptionKeyFilePath);
+        return getFileContents(fileID-1, cipherHandler, fileHandler, decryptionKeyFilePath);
     }
 
     private String getFileContents(int fileID, Cipher cipherHandler, FileHandler fileHandler, String decryptionKeyFilePath){
