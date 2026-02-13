@@ -59,8 +59,6 @@ public class FileHandlerTest {
 
         assertTrue(fileID>=0);
         assertEquals(decrypted, expected);
-
-
     }
 
     @Test
@@ -104,6 +102,29 @@ public class FileHandlerTest {
         assertEquals("Invalid fileID", expected2);
     }
 
+
+    @Test
+    public void returnFileContentsReturnsCorrectForCarnivoreWithCustomKeyParameter() throws Exception {
+        //Arrange
+
+        FileHandler fileHandler = new FileHandler();
+        File[] fileList  = fileHandler.returnAvailableFiles();
+        Cipher cipherHandler =  mock(Cipher.class);
+
+        Path cip = Path.of("data/carnivore.cip");
+        Path txt = Path.of("data/carnivore.txt");
+
+        String encrypted = Files.readString(cip);
+        String decrypted = Files.readString(txt);
+
+        when(cipherHandler.decipher(encrypted)).thenReturn(decrypted);
+
+        int fileID = FileIndex(fileList,"carnivore.cip");
+        String expected  = fileHandler.returnFileContents(fileID, cipherHandler, "key.txt");
+
+        assertTrue(fileID>=0);
+        assertEquals(decrypted, expected);
+    }
     //Helper method to find FileIndex
     private int FileIndex(File[] file, String name){
 
