@@ -19,11 +19,14 @@ FileHandler
 +returnAvailableFiles() : File[]
 +returnAvailableFileNames() : String
 +returnFileContents(int fileID, Cipher cipherHandler) : String
++returnFileContents(int fileID, Cipher cipherHandler, String cipherKey) : String
+
 -------------------------------
 
 returnAvailableFiles() is used to make the program compatible with fileID which is the index of the requested file
 returnAvailableFileNames() returns the .cip file names
-returnFileContents() returns the deciphered text
+returnFileContents(int fileID, Cipher cipherHandler) returns the deciphered text assuming default key
++returnFileContents(int fileID, Cipher cipherHandler, String cipherKey) returns assuming different key
 
 Testing:
 

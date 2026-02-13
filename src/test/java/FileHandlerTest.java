@@ -5,8 +5,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
+
 
 public class FileHandlerTest {
 
@@ -44,7 +44,7 @@ public class FileHandlerTest {
         FileHandler fileHandler = new FileHandler();
         File[] fileList  = fileHandler.returnAvailableFiles();
         Cipher cipherHandler =  mock(Cipher.class);
-        cipherHandler.mapCipherKey();
+        cipherHandler.mapCipherKey("key.txt");
 
         Path cip = Path.of("data/carnivore.cip");
         Path txt = Path.of("data/carnivore.txt");
@@ -69,7 +69,7 @@ public class FileHandlerTest {
         FileHandler fileHandler = new FileHandler();
         File[] fileList  = fileHandler.returnAvailableFiles();
         Cipher cipherHandler =  mock(Cipher.class);
-        cipherHandler.mapCipherKey();
+        cipherHandler.mapCipherKey("key.txt");
 
         Path cip = Path.of("data/cointelpro.cip");
         Path txt = Path.of("data/cointelpro.txt");
@@ -92,7 +92,7 @@ public class FileHandlerTest {
         FileHandler fileHandler = new FileHandler();
         File[] fileList  = fileHandler.returnAvailableFiles();
         Cipher cipherHandler =  mock(Cipher.class);
-        cipherHandler.mapCipherKey();
+        cipherHandler.mapCipherKey("key.txt");
 
         int fileID_1 = -1;
         int fileID_2 = fileList.length;
