@@ -1,10 +1,20 @@
-1) No Argument Run: java topsecret
-    Listed the numbered files available to display
+1) No Argument Run:
+    java topsecret
+    - Lists the numbered files available to display
+    - Runs getAvailableFiles()
 2) One Integer Argument:
     Example: java topsecret 01
     - Displays on screen the contents of the file corresponding to the number entered
     - Uses the default key for deciphering
     - Says invalid input if anything but a positive integer is entered
     - Says "That file does not exist" if a positive integer is entered without a corresponding file
-3) Two Parameter Argument: java topsecret integer string
-    Example: java topsecret
+    - Runs getFileContents(int fileID)
+3) Two Parameter Argument:
+    Example: java topsecret integer string
+    - Verifies the validity of the fileID
+    - Uses the string as an alternate key for deciphering
+    - Checks that the key is usable for the diciphering
+
+
+Helper Method VerifyFileID:
+- Verifies the file id is valid
