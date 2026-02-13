@@ -38,12 +38,12 @@ public class IntegrationTests {
     void getFileContentsWithDecrpytionKey(){
         ProgramControl programControl = new ProgramControl();
 
-        String cipherKey = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        String cipherKeyFilePath = "ciphers/key.txt"; //using regular key for testing purposes
 
 
-        String result = programControl.getFileContents(1, cipherKey);
+        String result = programControl.getFileContents(1, cipherKeyFilePath);
 
-        assertEquals("Carnivore, later renamed DCS1000, was a system implemented by the Federal Bureau of Investigation (FBI) that was\\ndesigned to monitor email and electronic communications. It used a customizable packet sniffer that could monitor all\\nof a target user's Internet traffic. Carnivore was implemented in October 1997. By 2005 it had been replaced with\\nimproved commercial software.\"", result);
+        assertEquals("Carnivore, later renamed DCS1000, was a system implemented by the Federal Bureau of Investigation (FBI) that was\ndesigned to monitor email and electronic communications. It used a customizable packet sniffer that could monitor all\nof a target user's Internet traffic. Carnivore was implemented in October 1997. By 2005 it had been replaced with\nimproved commercial software.", result);
     }
 
 
