@@ -20,12 +20,20 @@ for character in cipheredText:
 return decipheredText
 
 Test:
-Test for one character:
-    given "g" expected output is "f"
-Test for multiple characters:
-    given "bcd" as input, expected output is "abc"
-Test for numbers:
-    given "a123" as input, expected output is "0Z12"
-Test with space and full stop:
-    given "Uif eph.", expected output is "The dog."
-
+Test for error in mapCipherKey:
+    Given "abc.txt" (file that does not exist in ciphers folder), expects "FileNotFoundException"
+    Given "empty_key.txt" (key file with no line or 1 line), expects "MissingLinesException"
+    Given "Unequal_lines.txt" (key file with unequal line), expects "DifferentLengthException"
+    Given "duplicate.txt" (key file with duplicate character in same line), expects "DuplicateCharacterException"
+Test decipher function:
+    Using the default key.txt file
+        Test for one character:
+            given "g" expected output is "f"
+        Test for multiple characters:
+            given "bcd" as input, expected output is "abc"
+        Test for numbers:
+            given "a123" as input, expected output is "0Z12"
+        Test with space and full stop:
+            given "Uif eph.", expected output is "The dog."
+    Using the newkey.txt file (Shift 2 instead of 1):
+        given "Ecv", expected "Cat"

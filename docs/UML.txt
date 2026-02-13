@@ -21,17 +21,17 @@ Parameters:
 
 cipher
 --------------
-- key: String
 - cipherMap: Hash map
 - decipheredText: String
 ---------------
-+ mapCipherKey()
-+ decipherCharacter(char cipheredChar):Char
++ mapCipherKey(String keyFile)
++ decipher(String cipheredText):String
 
 Explanation (mapCipherKey):
     - Void function to match ciphered and original characters in the hashmap
+    - Take 1 argument which is the name of the file containing cipher key
     - no return
-Explanation (decipherCharacter):
-    - Using the hashmap to decipher the inputted character
-Return:
-    - deciphered character
+Explanation (decipher):
+    - Using the hashmap to decipher the inputted String
+    Return:
+        - deciphered text
