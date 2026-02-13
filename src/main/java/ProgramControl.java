@@ -34,19 +34,25 @@ public class ProgramControl {
         return availableFilesString;
     }
 
+    //helper method
     public String getFileContents(int fileID){
-        return getFileContents(fileID, cipherHandler, fileHandler);
+        //subtract 1 from fileID because FileHandler treats it as an array index
+        return getFileContents(fileID-1, cipherHandler, fileHandler);
     }
 
     private String getFileContents(int fileID, Cipher cipherHandler, FileHandler fileHandler){
         return fileHandler.returnFileContents(fileID, cipherHandler);
     }
 
+    //helper method
     public String getFileContents(int fileID, String decryptionKey){
-        return "";
+        //subtract 1 from fileID because FileHandler treats it as an array index
+        return getFileContents(fileID, cipherHandler, fileHandler, decryptionKey);
     }
 
-
+    private String getFileContents(int fileID, Cipher cipherHandler, FileHandler fileHandler, String decryptionKey){
+        return fileHandler.returnFileContents(fileID, cipherHandler, decryptionKey);
+    }
 
     public Cipher getCipherHandler() {
         return cipherHandler;

@@ -53,5 +53,18 @@ public class ProgramControlTest {
     }
 
     @Test
-    void getFileContentsWithDecrpytionKey(){}
+    void getFileContentsWithDecrpytionKey(){
+        String cipherKey = "cdefghijklmnopqrstuvwxyzabCDEFGHIJKLMNOPQRSTUVWXYZAB2345678901";
+        FileHandler fileHandler = mock(FileHandler.class);
+        Cipher cipherHandler = mock(Cipher.class);
+
+        programControl.setFileHandler(fileHandler);
+        programControl.setCipherHandler(cipherHandler);
+
+        when(fileHandler.returnFileContents(1, programControl.getCipherHandler(), cipherKey)).thenReturn("Decrypted contents of file 1");
+
+        String result = programControl.getFileContents(1, cipherKey);
+
+        assertEquals("Decrypted contents of file 1", result);
+    }
 }
