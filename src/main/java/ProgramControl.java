@@ -1,23 +1,45 @@
 import java.io.File;
-import java.util.ArrayList;
 
 public class ProgramControl {
-    private String encryptionKey;
+    private FileHandler fileHandler;
+    private Cipher cipherHandler;
 
     public ProgramControl(){
-        this.encryptionKey = "";
-    }
-    public ProgramControl(String encryptionKey){
-        this.encryptionKey = encryptionKey;
+        this.fileHandler = new FileHandler();
+        this.cipherHandler = new Cipher();
     }
 
     public String getAvailableFiles(){
-        FileHandler fileHandler = new FileHandler();
-        return "";
+        return getAvailableFiles(fileHandler);
+    }
+
+    private String getAvailableFiles(FileHandler fileHandler){
+
+        File[] files = fileHandler.returnAvailableFiles();
+
+        if(files.length == 0){
+            return "No available files";
+        }
+
+        String availableFilesString = "";
+
+        for (int i = 0; i < files.length; i++) {
+            if(i+1<10) {
+                availableFilesString = availableFilesString + "0" + (i+1) + " " + files[i].getName() + "\n";
+            }
+            else{
+                availableFilesString = availableFilesString + (i+1) + " " + files[i].getName() + "\n";
+            }
+        }
+        return availableFilesString;
     }
 
     public String getFileContents(int fileID){
-        return "";
+        return getFileContents(fileID, cipherHandler, fileHandler);
+    }
+
+    private String getFileContents(int fileID, Cipher cipherHandler, FileHandler fileHandler){
+        return fileHandler.returnFileContents(fileID, cipherHandler);
     }
 
     public String getFileContents(int fileID, String decryptionKey){
@@ -25,11 +47,21 @@ public class ProgramControl {
     }
 
 
-    public String getEncryptionKey() {
-        return encryptionKey;
+
+    public Cipher getCipherHandler() {
+        return cipherHandler;
     }
 
-    public void setEncryptionKey(String encryptionKey) {
-        this.encryptionKey = encryptionKey;
+    public void setCipherHandler(Cipher cipherHandler) {
+        this.cipherHandler = cipherHandler;
     }
+
+    public FileHandler getFileHandler() {
+        return fileHandler;
+    }
+
+    public void setFileHandler(FileHandler fileHandler) {
+        this.fileHandler = fileHandler;
+    }
+
 }
